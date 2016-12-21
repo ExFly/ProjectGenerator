@@ -1,10 +1,10 @@
 package cn.exfly.util;
 
 public class DBConfiger {
-	public static String DatabaseDriver;
-	public static String DatabaseUrl;
-	public static String username;
-	public static String password;
+	public String DatabaseDriver;
+	public String DatabaseUrl;
+	public String username;
+	public String password;
 	private static DBConfiger theOnlyOneInstance;
 	private DBConfiger(String dbDriver, String dbUrl, String username, String password){
 		this.DatabaseDriver = dbDriver;

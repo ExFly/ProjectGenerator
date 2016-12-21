@@ -3,8 +3,6 @@ package cn.exfly.util;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-import javax.servlet.http.HttpSession;
-
 public class DBConnector {
 	private Connection con;
 	String dbDriver;

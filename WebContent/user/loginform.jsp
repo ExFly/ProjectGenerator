@@ -8,8 +8,23 @@
 </head>
 <body>
 <form action="<%=request.getContextPath() %>/Signin" method="post">
-	<input type="text" name="username">
-	<input type="password" name="password">
+	username:<input type="text" name="username"><br>
+	password:<input type="password" name="password"><br>
+	<%
+	String isLogin = (String)session.getAttribute("isLogin");
+	if(isLogin!=null){
+		if(isLogin.equals("false")){
+	%>
+		<p>message:账号或密码错误；</p>
+	<% 
+		}
+	}	
+	if(isLogin!=null){
+		if(isLogin.equals("true")){
+			response.sendRedirect(request.getContextPath()+"/index.jsp");
+		}
+	}
+	%>
 	<input type="submit" value="login">
 </form>
 </body>

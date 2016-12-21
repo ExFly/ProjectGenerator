@@ -1,8 +1,6 @@
 package cn.exfly.handler.user;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.Statement;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,7 +11,6 @@ import javax.servlet.http.HttpSession;
 
 import cn.exfly.model.UserDBProc;
 import cn.exfly.util.DBConfiger;
-import cn.exfly.util.UserInfor;
 
 /**
  * Servlet implementation class Signin
@@ -35,8 +32,6 @@ public class Signin extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		Connection con = null;
-		Statement stmt = null;
 		String DatabaseDriver=getServletContext().getInitParameter("DatabaseDriver");
 		String DatabaseUrl=getServletContext().getInitParameter("DatabaseUrl");
 		String dbusername=getServletContext().getInitParameter("username");
@@ -48,8 +43,13 @@ public class Signin extends HttpServlet {
 		
 		HttpSession session = request.getSession();
 		UserDBProc user = new UserDBProc(session, DBCONFIG);
-		user.signin(username, password);
-		response.sendRedirect(request.getContextPath()+"/index.jsp");
+		if(user.signin(username, password)){
+			session.setAttribute("isLogin", "true");
+			response.sendRedirect(request.getContextPath()+"/index.jsp");
+		} else {
+			session.setAttribute("isLogin", "false");
+			response.sendRedirect(request.getContextPath()+ "/user/loginform.jsp");
+		}
 	}
 
 	/**

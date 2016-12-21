@@ -17,8 +17,19 @@
 	}
 %>
 <h1>Hello, <%=username %>!</h1>
-<a href="<%=request.getContextPath()%>/user/loginform.jsp">signin</a>
-<a href="<%=request.getContextPath()%>/Logout">Logout</a><br>
+	<%
+	if(userinfo != null) {
+		%>
+			<a href="<%=request.getContextPath()%>/Logout">Logout</a><br>
+		<%
+	}else{
+		%>
+			<a href="<%=request.getContextPath()%>/user/loginform.jsp">signin</a>
+	<%
+	}
+	%>
+
+
 <br>
 <h2>功能列表</h2>
 <a href="<%=request.getContextPath()%>/News">news</a>

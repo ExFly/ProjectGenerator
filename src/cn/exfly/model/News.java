@@ -1,10 +1,7 @@
 package cn.exfly.model;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +19,7 @@ public class News {
 	private News(String username, int power, DBConfiger indbconfig) {
 		this.power = power;
 		this.username = username;
-		list = new ArrayList();
+		list = (List<cn.exfly.util.NewsObject>)new ArrayList();
 	}
 	
 	

@@ -1,11 +1,9 @@
 package cn.exfly.model;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 import javax.servlet.http.HttpSession;
 
@@ -41,8 +39,8 @@ public class UserDBProc {
 		con = DBConnector.initDBConnector(dbconfig.DatabaseDriver,dbconfig.DatabaseUrl,dbconfig.username,dbconfig.password);
 	}
 	
-	public String signin(String _username, String _password) {
-		String result="false";
+	public boolean signin(String _username, String _password) {
+		boolean result = false;
 		initDBConnector();
 		PreparedStatement pstmt = null;
 		try {
@@ -51,10 +49,9 @@ public class UserDBProc {
 		    pstmt.setString(1,_username);
 		    pstmt.setString(2,_password);
 		    ResultSet rs = pstmt.executeQuery();
-		    if(rs.wasNull()) {
-		    	System.out.println("NULL");
+		    if(!rs.next()) {
+		    	System.out.println(_username+" "+_password+"尝试了错的密码");
 		    }else {
-		    	rs.next();
 		    	int userid = rs.getInt("userid");
 		    	String username = _username;
 		    	int power = rs.getInt("private");
@@ -64,7 +61,7 @@ public class UserDBProc {
 //		    	session.setAttribute("username", username);
 //		    	session.setAttribute("power", power);
 //		    	session.setAttribute("usergroup", usergroup);
-		    	result = "true";
+		    	result = true;
 		    }
 		}
 		catch (SQLException e) {

@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2016-12-17 19:56:26
+Date: 2016-12-21 22:34:09
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -29,17 +29,16 @@ CREATE TABLE `news` (
   PRIMARY KEY (`id`),
   KEY `userid` (`userid`),
   CONSTRAINT `newsuserid` FOREIGN KEY (`userid`) REFERENCES `user` (`userid`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of news
 -- ----------------------------
-INSERT INTO `news` VALUES ('1', '2', 'title1', 'content1', '2016-12-01 16:09:34', '0');
-INSERT INTO `news` VALUES ('2', '1', 'title2', 'content2', '2016-12-01 16:09:54', '8');
-INSERT INTO `news` VALUES ('3', '2', 'title3', 'content3', '2016-12-21 17:53:41', '8');
-INSERT INTO `news` VALUES ('4', '2', 'title4', 'content4', '2016-12-20 17:54:00', '0');
-INSERT INTO `news` VALUES ('5', '2', 'title5', 'content5', '2016-12-14 17:54:20', '0');
-INSERT INTO `news` VALUES ('6', '2', '中文测试', '中文测试content', '2016-12-08 19:06:14', '8');
+INSERT INTO `news` VALUES ('7', '1', '中央发文：这项工作没做好 一把手别想升迁', '14日，一份由中办、国办印发的文件正式面世，让所有政法君为之瞩目。', '2016-12-08 19:59:20', '8');
+INSERT INTO `news` VALUES ('8', '1', '解放军发布疑似我军轰6K战机与台湾玉山合影(图)', '12月16日晚，解放军空军官方微博@空军发布发表图片，并配发文字“周末，分享一幅很有意义的照片！”。照片中显示轰-6K战略轰炸机正在云上飞行，远处可以看到两座相邻的山峰。从山峰形状看，这很可能是台湾南投县境内的玉山主峰，其标高为3952米，距离海岸线50公里。从照片中“玉山”南北两峰位置关系看，图中的轰炸机正在由北向南飞行，表明这是解放军空军编队11月25日环绕台湾飞行演训时所拍摄的照片。', '2016-12-21 19:59:58', '0');
+INSERT INTO `news` VALUES ('9', '1', '日外交官：中国崛起带来不安 请考虑邻国感受', '[石川浩司：请中方考虑周边国家的感受]日本驻华大使馆政务公使石川浩司在#环球时报2017年会#上说：中国的崛起，周边国家适应新的崛起，对这一点，可能韩国有同样的感受，中国崛起，中国发展，可能是历史性的潮流，但是与此同时，如果可能的话，请给我们提供发展的条件。比如中国海军在西太平洋军事演习，2009', '2016-12-14 20:00:33', '0');
+INSERT INTO `news` VALUES ('10', '2', '整个青年班子沦陷 不到30岁的“女一号”干了啥', '“政事儿”（微信ID：gcxxjgzh）注意到，去年6月，该违纪案件被湘潭县纪委查处。时任团县委书记万子萱，副书记陈泰宏、胡巧，青年服务中心主任黄怿，办公室主任周琼宇共5人受到处分。', '2016-11-29 20:01:00', '0');
+INSERT INTO `news` VALUES ('11', '2', '广西北海公证处每天限号12个 民众通宵排队抢号', '央广网北海12月17日消息（记者许大为 广西台记者曾宇佳 蔡俊聪）据中国之声《新闻晚高峰》报道，从今年8月开始，广西北海市公证处实施限号办理业务，每天只发放12个号。几个月来，不少群众为了能尽快办理到业务，不得不通宵排队抢号。对此，北海市公证处相关负责人表示，由于工作人员紧缺，限号办理业务还将继续。', '2016-11-09 20:01:43', '0');
 
 -- ----------------------------
 -- Table structure for `user`
@@ -52,13 +51,14 @@ CREATE TABLE `user` (
   `private` int(11) NOT NULL DEFAULT '8',
   `usergroup` varchar(32) DEFAULT NULL,
   PRIMARY KEY (`userid`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of user
 -- ----------------------------
 INSERT INTO `user` VALUES ('0000000001', 'root', 'toor', '0', null);
-INSERT INTO `user` VALUES ('0000000002', 'test', 'test', '8', null);
+INSERT INTO `user` VALUES ('0000000002', 'test', 'test', '5', null);
+INSERT INTO `user` VALUES ('0000000003', 'exfly', 'exfly', '8', null);
 
 -- ----------------------------
 -- Table structure for `userinfo`

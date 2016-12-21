@@ -1,7 +1,6 @@
 package cn.exfly.handler.resource;
 
 import java.io.IOException;
-import java.util.Iterator;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -14,7 +13,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import cn.exfly.util.DBConfiger;
-import cn.exfly.util.NewsObject;
 import cn.exfly.util.UserInfor;
 
 /**
@@ -36,13 +34,13 @@ public class News extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		// TODO 检查
 		String DatabaseDriver=getServletContext().getInitParameter("DatabaseDriver");
 		String DatabaseUrl=getServletContext().getInitParameter("DatabaseUrl");
 		String dbusername=getServletContext().getInitParameter("username");
 		String dbpassword=getServletContext().getInitParameter("password");
-//		System.out.println(DatabaseDriver+DatabaseUrl+username+password);
 		DBConfiger DBCONFIG = DBConfiger.getInstance(DatabaseDriver, DatabaseUrl, dbusername, dbpassword);
+		
 		HttpSession session = request.getSession();
 		UserInfor ui = (UserInfor) session.getAttribute("userinfo");
 		int power = 8;

@@ -16,7 +16,7 @@
 		username = userinfo.username;
 	}
 %>
-<h1>Hello, <%=username %>!</h1>
+	<h1>Hello, <%=username %>!</h1>
 	<%
 	if(userinfo != null) {
 		%>
@@ -28,8 +28,6 @@
 	<%
 	}
 	%>
-
-
 <br>
 <h2>功能列表</h2>
 <a href="<%=request.getContextPath()%>/News">news</a>

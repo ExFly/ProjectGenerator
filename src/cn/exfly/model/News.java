@@ -56,8 +56,8 @@ public class News {
 		
 		return list;
 	}
-	
-	private boolean hasPower(int priv) {
+
+ boolean hasPower(int priv) {
 		return power <= priv;
 	}
 }

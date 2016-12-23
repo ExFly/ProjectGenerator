@@ -20,21 +20,7 @@ public class UserDBProc {
 		dbconfig = indbconfig;
 		this.session = session;
 	}
-//	private Connection initDBConnector() {
-//		if(con == null) {
-//			try {
-//			    	// 1、加载MYSQL驱动，这是`Driver`的实现，MySQL的JDBC驱动类是com.mysql.jdbc.Driver
-//				    Class.forName(dbconfig.DatabaseDriver).newInstance();
-//				    // 2、连接到MYSQL，通过`DriverManger`来操作`Driver`，获取数据库连接
-//				    con = DriverManager.getConnection(dbconfig.DatabaseUrl, dbconfig.username, dbconfig.password);
-//			    } catch (Exception e) {
-//			    	// 如果有异常，进行异常处理
-//			    	e.printStackTrace();
-//			    	System.out.print("MYSQL ERROR:" + e.getMessage());
-//			}
-//		}
-//		return con;
-//	}
+
 	private void initDBConnector() {
 		con = DBConnector.initDBConnector(dbconfig.DatabaseDriver,dbconfig.DatabaseUrl,dbconfig.username,dbconfig.password);
 	}
@@ -58,9 +44,6 @@ public class UserDBProc {
 		    	String usergroup = rs.getString("usergroup");
 		    	UserInfor userinfo = new UserInfor(userid, username, power, usergroup);
 		    	session.setAttribute("userinfo", userinfo);
-//		    	session.setAttribute("username", username);
-//		    	session.setAttribute("power", power);
-//		    	session.setAttribute("usergroup", usergroup);
 		    	result = true;
 		    }
 		}

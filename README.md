@@ -1,4 +1,12 @@
+## [JavaEE wanglong老师课程作业](https://github.com/ExFly/ProjectGenerator/tree/javaeeGeneratorNormal):作业以eclipse为IDE，但方便老师查看，又创建的MyEclipse项目压缩文件
+
+# 安装方法
+* 创建任意数据库，（最好命名为mis_exfly，否则需要修改web.xml文件中的数据库配置）
+* 创建查询，执行mis_exfly.sql文件中的sql语句（初始化数据库）
+* 启动tomcat服务后既可以浏览
+
 # 笔记
+
 一共两个项目，需要根据愿功能进行扩展。
 1 投票系统
 	流程较简单，需要扩展功能，将流程正式一些
@@ -85,7 +93,3 @@ news
 jstl.jar
 mysql-connector-java.jar
 standard.jar
-
-
-# 流程图
-1. 登陆

@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">LearnAndroidDemo</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_save_data">数据持久化</string>
+    <string name="action_broadcast">系统全局广播</string>
+    <string name="local_broadcast_button">发送本地广播</string>
+    <string name="notification">通知</string>
+    <string name="multithreading">操作UI 多线程Handler</string>
+    <string name="async_task">X 操作UI AsyncTask</string>
+    <string name="network">网络</string>
+    <string name="action_settings">设置</string>
+
+    <string name="sava_data">数据持久化</string>
+    <string name="sava_data_to_file">保存数据到文件 X</string>
+    <string name="daba_data_to_share_reference">保存到SharedPreferences</string>
+    <string name="sava_data_to_db">保存数据到数据库 X</string>
+
+</resources>
